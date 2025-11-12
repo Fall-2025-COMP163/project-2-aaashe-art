@@ -287,11 +287,11 @@ class Weapon:
     Weapon class to demonstrate composition.
     Characters can HAVE weapons (composition, not inheritance).
     """
-    
-    def __init__(self, name, damage_bonus, special_ability):
+    #special_ability
+    def __init__(self, name, damage_bonus, ):
         self.name = name
         self.damage_bonus = damage_bonus
-        self.special_ability = special_ability
+        #self.special_ability = special_ability
         """
         Create a weapon with a name and damage bonus.
         """
@@ -304,14 +304,14 @@ class Weapon:
         """
         print(f"Weapon: {self.name}")
         print(f"Damage Bonus: +{self.damage_bonus}")
-        print(f"Special Ability: {self.special_ability}")
+        #print(f"Special Ability: {self.special_ability}")
         # TODO: Print weapon name and damage bonus
         #pass
-starter_staff = Weapon("Apprentice's Staff",5,"Arcane Boost")
+starter_staff = Weapon("Apprentice's Staff",5)
 
-dual_daggers = Weapon("Twin Shadows",6,"Shadow Step")
+dual_daggers = Weapon("Twin Shadows",6)
 
-war_hammer = Weapon("Crimson War Hammer",8,"Stun Smash")
+war_hammer = Weapon("Crimson War Hammer",8)
 
 # ============================================================================
 # MAIN PROGRAM FOR TESTING (YOU CAN MODIFY THIS FOR TESTING)
