@@ -1,3 +1,12 @@
+## Read me notes Abraheem Ashe
+Outside of the scope of the project I added three new weapons that all have their own attributes, they use the same template as the original weapons just enhanced, I think another unique implementation I added that I think is cool is that I made it so that the rouge class has a crit chance and there is a roll of the dice whether or not he crits. I imported the random module to make this happen. I got this idea from my friend when I was talking to him about the project. I did use AI in this section of code because I was having a hard time getting it to work syntactically and logically. It would constantly roll negative even after attacking multiple times. Besides there I used AI periodically when there were logic errors, but didn't use AI to write any of the code from scratch. AI was used in the enhanced weapons info; again, I had some logic errors where it would not print the right attribute.
+
+
+
+
+
+
+
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/mMxhKicI)
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=21457509&assignment_repo_type=AssignmentRepo)
 # COMP 163 - Project 2: Character Abilities Showcase
