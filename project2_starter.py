@@ -287,11 +287,11 @@ class Weapon:
     Weapon class to demonstrate composition.
     Characters can HAVE weapons (composition, not inheritance).
     """
-    #special_ability
+    
     def __init__(self, name, damage_bonus, ):
         self.name = name
         self.damage_bonus = damage_bonus
-        #self.special_ability = special_ability
+        
         """
         Create a weapon with a name and damage bonus.
         """
@@ -312,6 +312,80 @@ starter_staff = Weapon("Apprentice's Staff",5)
 dual_daggers = Weapon("Twin Shadows",6)
 
 war_hammer = Weapon("Crimson War Hammer",8)
+
+# Added more weapons and displayed their info
+class EnhancedWeapon:
+    """
+    Wraps an existing Weapon and adds special attributes like modifiers.
+    Does NOT alter the original Weapon class.
+    """
+    def __init__(
+        self,
+        base_weapon,               # Original Weapon instance
+        additional_damage=0,       # Extra flat damage to add to the base weapon
+        critical_hit_chance=0,     # Percent chance for critical hit
+        lifesteal_percent=0,       # Percent of damage healed as lifesteal
+        elemental_type=None        # Elemental type (Fire, Ice, Lightning, etc.)
+    ):
+        self.base_weapon = base_weapon
+        self.name = base_weapon.name
+        self.total_damage_bonus = base_weapon.damage_bonus + additional_damage
+        self.critical_hit_chance = critical_hit_chance
+        self.lifesteal_percent = lifesteal_percent
+        self.elemental_type = elemental_type
+
+    def display_info(self):
+        """
+        Display information about the enhanced weapon.
+        """
+        print(f"Weapon: {self.name}")
+        print(f"Damage Bonus: +{self.total_damage_bonus}")
+        if self.critical_hit_chance > 0:
+            print(f"Critical Hit Chance: {self.critical_hit_chance}%")
+        if self.lifesteal_percent > 0:
+            print(f"Lifesteal: {self.lifesteal_percent}%")
+        if self.elemental_type:
+            print(f"Element: {self.elemental_type}")
+
+
+class EnhancedWeaponInfo:
+    """
+    Stores enhanced weapons and prints their stats.
+    """
+    def __init__(self):
+        # Enhanced weapons
+        self.frostbite_blade = EnhancedWeapon(
+            base_weapon=Weapon("Frostbite Blade", 7),
+            additional_damage=2,
+            elemental_type="Ice"
+        )
+
+        self.stormcaller_wand = EnhancedWeapon(
+            base_weapon=Weapon("Stormcaller Wand", 9),
+            additional_damage=1,
+            critical_hit_chance=15,
+            elemental_type="Lightning"
+        )
+
+        self.obsidian_greatsword = EnhancedWeapon(
+            base_weapon=Weapon("Obsidian Greatsword", 12),
+            additional_damage=4,
+            critical_hit_chance=10,
+            lifesteal_percent=5,
+            elemental_type="Shadow"
+        )
+
+    def display_all_enhanced(self):
+        """
+        Prints stats of all enhanced weapons added.
+        """
+        print("------ Enhanced Weapons ------")
+        print("Frostbite Blade:")
+        self.frostbite_blade.display_info()
+        print("Stormcaller Wand:")
+        self.stormcaller_wand.display_info()
+        print("Obsidian Greatsword:")
+        self.obsidian_greatsword.display_info()
 
 # ============================================================================
 # MAIN PROGRAM FOR TESTING (YOU CAN MODIFY THIS FOR TESTING)
